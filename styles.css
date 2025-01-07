@@ -5,6 +5,10 @@ body {
   font-family: Arial, sans-serif;
   color: #fff;
 }
+a {
+  text-decoration: none;
+  color: white;
+}
 .body-wrapper {
   display: flex;
   justify-content: center;
@@ -21,6 +25,7 @@ body {
 .about {
   background: url(./assets/background.svg) no-repeat;
 }
+
 .about .title {
   text-align: center;
   padding-top: 20px;
@@ -88,4 +93,11 @@ body {
   align-items: center;
   background-color: #2d789f;
   color: white;
+}
+.home {
+  background: url(./assets/background2.svg) no-repeat;
+  height: 557px;
+}
+.home .btns-wrapper {
+  padding-top: 68px;
 }
