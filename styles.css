@@ -2,28 +2,32 @@ body {
   margin: 0;
   padding: 0;
   background-color: #ba1728;
-  font-family: Arial, sans-serif;
-  color: #fff;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #fff;
 }
+
 a {
   text-decoration: none;
   color: white;
 }
+
 .body-wrapper {
   display: flex;
   justify-content: center;
 }
+
 .container {
   width: 428px;
   align-items: center;
 }
+
 .logo-holder {
   justify-content: center;
   display: flex;
-  margin: 20px 0px 70px 0px;
+  margin: 20px 0 70px 0;
 }
+
 .about {
   padding-top: 10px;
   background: url(./assets/background.svg) no-repeat;
@@ -40,47 +44,57 @@ a {
   padding: 0 40px;
   justify-content: center;
 }
+
 .about .about-form input {
   padding: 19px;
-  border-radius: 10px;
+  border-radius: 8px;
 }
+
 .about .about-form label {
   padding: 5px;
   font-size: 13px;
 }
+
 .rating {
-  padding: 0px 50px;
+  padding: 0 50px;
 }
+
 .rating .emojis {
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
   gap: 20px;
 }
+
 .rating .services {
   display: flex;
   justify-content: space-between;
 }
+
 .rating .services .service-title {
   display: flex;
   justify-content: space-between;
   gap: 10px;
 }
+
 .rating .services .radios {
   display: flex;
   justify-content: space-between;
   gap: 20px;
 }
+
 .comments {
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
+
 .comments textarea {
   padding: 20px;
   margin: 0 60px;
-  border-radius: 20px;
+  border-radius: 8px;
   height: 136px;
 }
+
 .submit {
   display: flex;
   justify-content: center;
@@ -89,23 +103,30 @@ a {
 
 .submit button {
   padding: 20px 80px;
-  border-radius: 20px;
-  border-radius: 20px;
+  border-radius: 8px;
   height: 50px;
   width: 305px;
   text-align: center;
-  align-items: center;
   background-color: #2d789f;
   color: white;
   border: none;
 }
+
+.submit button:hover {
+  cursor: pointer;
+}
+
 .home {
   background: url(./assets/background2.svg) no-repeat;
   height: 557px;
 }
+
 .home .btns-wrapper {
   padding-top: 68px;
 }
-.home .btns-wrapper .submit button:hover {
-  cursor: pointer;
+
+.home .btns-wrapper .submit {
+  display: flex;
+  justify-content: center;
+  padding: 0 0 17px 0;
 }
