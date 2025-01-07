@@ -93,6 +93,7 @@ a {
   align-items: center;
   background-color: #2d789f;
   color: white;
+  border: none;
 }
 .home {
   background: url(./assets/background2.svg) no-repeat;
