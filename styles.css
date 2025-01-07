@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ba1728;
+  font-family: Arial, sans-serif;
+  color: #fff;
+}
+.body-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.container {
+  width: 428px;
+  align-items: center;
+}
+.logo-holder {
+  justify-content: center;
+  display: flex;
+  margin: 20px 0px 70px 0px;
+}
+.about {
+  background: url(./assets/background.svg) no-repeat;
+}
+.about .title {
+  text-align: center;
+  padding-top: 20px;
+}
+.about .about-form {
+  display: flex;
+  flex-direction: column;
+  padding: 0 40px;
+  justify-content: center;
+}
+.about .about-form input {
+  padding: 10px;
+  border-radius: 10px;
+}
+.about .about-form label {
+  padding: 5px;
+  font-size: 13px;
+}
+.rating {
+  padding: 50px;
+}
+.rating .emojis {
+  display: flex;
+  justify-content: right;
+  gap: 20px;
+}
+.rating .services {
+  display: flex;
+  justify-content: space-between;
+}
+.rating .services .service-title {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.rating .services .radios {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.comments {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.comments textarea {
+  padding: 20px;
+  margin: 0 60px;
+  border-radius: 20px;
+  height: 136px;
+}
+.submit {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.submit button {
+  padding: 20px 80px;
+  border-radius: 20px;
+  border-radius: 20px;
+  height: 50px;
+  width: 305px;
+  text-align: center;
+  align-items: center;
+  background-color: #2d789f;
+  color: white;
+}

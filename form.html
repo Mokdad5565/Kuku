@@ -1,0 +1,105 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="body-wrapper">
+      <div class="container">
+        <div class="logo-holder">
+          <img src="./assets/Rectangle.svg" />
+        </div>
+        <div class="about">
+          <div class="title"><h3>About You</h3></div>
+          <div class="about-form">
+            <label for="full-name">Full Name</label>
+            <input
+              type="text"
+              placeholder="Krazy Kuku"
+              name="full-name"
+              id="full-name"
+            />
+            <label for="dob">Date of Birth</label>
+            <input type="date" placeholder="DD/MM/YY" name="dob" id="dob" />
+            <label for="phone-number">Phone Number</label>
+            <input
+              type="tel"
+              placeholder="00 000 000"
+              name="phone-number"
+              id="phone-number"
+            />
+            <label for="email">Email</label>
+            <input
+              type="email"
+              placeholder="kuku@example.com"
+              name="email"
+              id="email"
+            />
+          </div>
+          <div class="rating">
+            <div class="title"><h3>Rate Your Experiences</h3></div>
+
+            <div class="emojis">
+              <img src="./assets/Vector.svg" />
+              <img src="./assets/Vector-1.svg" />
+            </div>
+            <div class="services">
+              <div class="service-title">
+                <img src="./assets/Vector-4.svg" />
+                <h3>Food</h3>
+              </div>
+              <div class="radios">
+                <input name="food" type="radio" />
+                <input name="food" type="radio" />
+              </div>
+            </div>
+            <div class="services">
+              <div class="service-title">
+                <img src="./assets/Vector-5.svg" />
+                <h3>Service</h3>
+              </div>
+              <div class="radios">
+                <input name="service" type="radio" />
+                <input name="service" type="radio" />
+              </div>
+            </div>
+            <div class="services">
+              <div class="service-title">
+                <img src="./assets/Vector-3.svg" />
+                <h3>Mood</h3>
+              </div>
+              <div class="radios">
+                <input name="mood" type="radio" />
+                <input name="mood" type="radio" />
+              </div>
+            </div>
+            <div class="services">
+              <div class="service-title">
+                <img src="./assets/Vector-2.svg" />
+                <h3>Cleanliness</h3>
+              </div>
+              <div class="radios">
+                <input name="cleanliness" type="radio" />
+                <input name="cleanliness" type="radio" />
+              </div>
+            </div>
+          </div>
+
+          <div class="comments">
+            <div class="title"><h3>Comments</h3></div>
+
+            <textarea
+              class="comment-area"
+              placeholder="Type Here..."
+            ></textarea>
+          </div>
+          <div class="submit">
+            <button>Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
