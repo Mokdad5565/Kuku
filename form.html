@@ -11,7 +11,12 @@
         <div class="logo-holder">
           <img src="./assets/Rectangle.svg" />
         </div>
-        <div class="about">
+        <div id="success-message" class="success-message" style="display: none;">
+          <h3>Thank you for your submission!</h3>
+          <p>Your feedback has been received successfully. We appreciate your time and input.</p>
+        </div>
+
+        <div class="about" id="about-you">
           <div class="title"><h3>About you</h3></div>
           <div class="about-form">
             <label for="full-name">Full Name</label>
@@ -40,7 +45,6 @@
           </div>
           <div class="rating">
             <div class="title"><h3>Rate Your Experiences</h3></div>
-
             <div class="emojis">
               <img src="./assets/Vector.svg" />
               <img src="./assets/Vector-1.svg" />
@@ -48,21 +52,43 @@
             <div class="services">
               <div class="service-title">
                 <img src="./assets/Vector-4.svg" />
+
                 <h3>Food</h3>
               </div>
               <div class="radios">
-                <input name="food" type="checkbox" />
-                <input name="food" type="checkbox" />
+                <input
+                  name="food"
+                  onclick="onlyOne(this,'food')"
+                  type="checkbox"
+                  value="good"
+                />
+                <input
+                  name="food"
+                  onclick="onlyOne(this,'food')"
+                  type="checkbox"
+                  value="bad"
+                />
               </div>
             </div>
             <div class="services">
               <div class="service-title">
                 <img src="./assets/Vector-5.svg" />
+
                 <h3>Service</h3>
               </div>
               <div class="radios">
-                <input name="service" type="checkbox" />
-                <input name="service" type="checkbox" />
+                <input
+                  name="service"
+                  onclick="onlyOne(this,'service')"
+                  type="checkbox"
+                  value="good"
+                />
+                <input
+                  name="service"
+                  onclick="onlyOne(this,'service')"
+                  type="checkbox"
+                  value="bad"
+                />
               </div>
             </div>
             <div class="services">
@@ -71,8 +97,20 @@
                 <h3>Mood</h3>
               </div>
               <div class="radios">
-                <input name="mood" type="checkbox" />
-                <input name="mood" type="checkbox" />
+                <input
+                  name="mood"
+                  onclick="onlyOne(this,'mood')"
+                  type="checkbox"
+                  value="good"
+
+                />
+                <input
+                  name="mood"
+                  onclick="onlyOne(this,'mood')"
+                  type="checkbox"
+                  value="bad"
+
+                />
               </div>
             </div>
             <div class="services">
@@ -81,10 +119,20 @@
                 <h3>Cleanliness</h3>
               </div>
               <div class="radios">
-                <input name="cleanliness" type="checkbox" />
-                <input name="cleanliness" type="checkbox" />
+                <input
+                  name="cleanliness"
+                  onclick="onlyOne(this,'cleanliness')"
+                  type="checkbox"
+                  value="good"
+
+                />
+                <input
+                  name="cleanliness"
+                  onclick="onlyOne(this,'cleanliness')"
+                  type="checkbox"
+                  value="bad"
+                />
               </div>
-            </div>
           </div>
 
           <div class="comments">
@@ -93,13 +141,78 @@
             <textarea
               class="comment-area"
               placeholder="Type Here..."
+              id="comments"
             ></textarea>
           </div>
           <div class="submit">
-            <button>Submit</button>
+            <button onclick="sendData(event)">Submit</button>
           </div>
         </div>
       </div>
     </div>
+
+    <script>
+      function onlyOne(checkbox, name) {
+        const checkboxes = document.querySelectorAll(
+          `input[type="checkbox"][name="${name}"]`
+        );
+        checkboxes.forEach((cb) => {
+          if (cb !== checkbox) cb.checked = false;
+        });
+      }
+    
+      async function sendData(event) {
+        event.preventDefault(); // Prevent the default form submission
+    
+        // Gather data
+        const data = {
+          fullName: document.getElementById("full-name").value==""?"Not submitted":document.getElementById("full-name").value,
+          dob: document.getElementById("dob").value==""?"Not submitted":document.getElementById("dob").value,
+          phone: document.getElementById("phone-number").value==""?"Not submitted":document.getElementById("phone-number").value,
+          email: document.getElementById("email").value==""?"Not submitted":document.getElementById("email").value,
+          food: document.querySelector('input[name="food"]:checked')
+            ? document.querySelector('input[name="food"]:checked').value
+            : "Not submitted",
+          service: document.querySelector('input[name="service"]:checked')
+            ? document.querySelector('input[name="service"]:checked').value
+            : "Not submitted",
+          cleanliness: document.querySelector('input[name="cleanliness"]:checked')
+            ? document.querySelector('input[name="cleanliness"]:checked').value
+            : "Not submitted",
+          mood: document.querySelector('input[name="mood"]:checked')
+            ? document.querySelector('input[name="mood"]:checked').value
+            : "Not submitted",
+          comments: document.getElementById("comments").value==""?"Not submitted":document.getElementById("comments").value,
+          
+        };
+    
+        // Construct the URL with query parameters
+        const url = new URL("http://localhost:8800/api/v1/site");
+        Object.keys(data).forEach((key) => {
+          if (data[key]) {
+            url.searchParams.append(key, data[key]);
+          }
+        });
+    
+        try {
+          console.log('Sending data:', data);
+    
+          const response = await fetch(url, {
+            method: "GET", // Use GET method
+          });
+    
+          if (response.ok) {
+            const result = await response.json();
+            document.getElementById("about-you").style.display = "none";
+            document.getElementById("success-message").style.display = "block";          
+          } else {
+            const error = await response.text();
+            console.error("Error:", error);
+          }
+        } catch (error) {
+          console.error("Error:", error);
+        }
+      }
+    </script>
   </body>
 </html>

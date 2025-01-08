@@ -62,7 +62,7 @@ a {
 .rating .emojis {
   display: flex;
   justify-content: flex-end;
-  gap: 20px;
+  gap: 28px;
 }
 
 .rating .services {
@@ -80,6 +80,7 @@ a {
   display: flex;
   justify-content: space-between;
   gap: 20px;
+  margin-top: 20px;
 }
 
 .comments {
@@ -129,4 +130,33 @@ a {
   display: flex;
   justify-content: center;
   padding: 0 0 17px 0;
+}
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  position: relative;
+  cursor: pointer;
+  background-color: white;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Style the checkbox when it's checked */
+input[type="checkbox"]:checked {
+  background-color: #efb91c; /* Change the background to yellow */
+  border-color: #efb91c; /* Optional: change the border color to match */
+}
+
+/* Optional: Adding a checkmark icon */
+input[type="checkbox"]:checked::before {
+  content: "✔"; /* Adds checkmark symbol */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 12px;
 }
