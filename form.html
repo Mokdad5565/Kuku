@@ -29,7 +29,7 @@
               name="full-name"
               id="full-name"
             />
-            <label for="dob" id="full-name">Date of Birth</label>
+            <label for="dob" >Date of Birth</label>
             <input type="date" placeholder="DD/MM/YY" name="dob" id="dob" />
             <label for="phone-number">Phone Number</label>
             <input
@@ -207,7 +207,8 @@
           if (response.ok) {
             const result = await response.json();
             document.getElementById("about-you").style.display = "none";
-            document.getElementById("success-message").style.display = "block";          
+            document.getElementById("success-message").style.display = "block"; 
+            window.location.pathname="/final.html" ;        
           } else {
             const error = await response.text();
             console.error("Error:", error);
